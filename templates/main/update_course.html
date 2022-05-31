@@ -1,0 +1,67 @@
+{% extends 'main/adminbase.html' %}
+{% load widget_tweaks %}
+{% block content %}
+<head>
+  <style media="screen">
+    input[type=text], select,input[type=number] ,input[type=password], textarea{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+  input[type=submit] {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  input[type=submit]:hover {
+    background-color: #45a049;
+  }
+
+
+  </style>
+
+
+</head>
+
+<br><br>
+<h3 style="text-align:center;">Обновить партнера</h3>
+<div>
+  <form method="post"  autocomplete="off" enctype="multipart/form-data" style="margin-left:200px;margin-right:200px;">
+      {% csrf_token %}
+        <label for="course_name">Название учебной программы</label>
+        {% render_field courseForm.title class="form-control" placeholder="Прикладная информатика" %}
+        <label for="code">Код</label>
+        {% render_field courseForm.code class="form-control" placeholder="10.10.10.10" %}
+        <label for="code">Сcылка</label>
+        {% render_field courseForm.link class="form-control" placeholder="https://" %}
+        <label for="university">Вуз</label>
+        {% render_field courseForm.university class="form-control" %}
+        <label for="tag_1">Тег №1</label>
+        {% render_field courseForm.tag_1 class="form-control" %}
+        <label for="tag_2">Тег №2</label>
+        {% render_field courseForm.tag_2 class="form-control" %}
+        <label for="tag_3">Тег №3</label>
+        {% render_field courseForm.tag_3 class="form-control" %}
+        <label for="description">Описание</label>
+        {% render_field courseForm.description class="form-control" rows="10" %}
+
+<br><br>
+    <input type="submit" value="Обновить">
+  </form>
+</div>
+
+
+
+<br><br><br><br><br><br><br><br>
+{% endblock content %}

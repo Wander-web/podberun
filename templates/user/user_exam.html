@@ -1,0 +1,488 @@
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+{% extends 'user/userbase.html' %}
+{% load widget_tweaks %}
+{% block content %}
+<head xmlns="http://www.w3.org/1999/html">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+       <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  a:link {
+        text-decoration: none;
+      }
+
+  </style>
+</head>
+<h2 style="text-align:center; color:blue;">Тест на сферы деятельности</h2>
+
+
+
+<script>
+    var questions = [{
+        text: "Выберите:",
+        answers: ["Изучать изменения климата и их причины, например, проблему глобального потепления",
+            "Создавать и эксплуатировать механическое оборудование, машины и технику"
+        ],
+
+        intellect: 0,
+        real: 1
+    }, {
+        text: "Выберите:",
+        answers: ["Изготавливать художественные изделия, украшения из драгоценных металлов и камней",
+            "Заниматься поиском и обучением сотрудников в компании, консультировать по вопросам карьеры"
+        ],
+        real: 0,
+        social: 1
+    }, {
+        text: "Выберите:",
+        answers: ["Ремонтировать телефоны, планшеты и мобильную технику",
+            "Вести финансовый учет в организации"
+        ],
+        real: 0,
+        conventional: 1
+
+    }, {
+        text: "Выберите:",
+        answers: ["Готовить и создавать рецепты новых блюд",
+            "Анализировать кризисный бизнес и выводить его из кризиса"
+        ],
+        real: 0,
+        initiative: 1
+
+    }, {
+        text: "Выберите:",
+        answers: ["Проводить химический анализ веществ в лаборатории",
+            "Исполнять роли в спектаклях, кино, рекламных роликах, видеоклипах"
+        ],
+        real: 0,
+        art: 1
+
+    }, {
+        text: "Выберите:",
+        answers: ["Исследовать большие массивы данных, работать на стыке математики и программирования",
+            "Продавать товар в другие компании и общаться с клиентами"
+        ],
+        intellect: 0,
+        social: 1
+
+    }, {
+        text: "Выберите:",
+        answers: ["Изучать рынки, потребности, поведение и предпочтения покупателей с целью продажи и продвижения товаров или услуг",
+            "Создавать программное обеспечение, писать програмный код на одном из языков программирования"
+        ],
+        intellect: 0,
+        conventional: 1
+
+    }, {
+        text: "Выберите:",
+        answers: ["Исследовать экологическую ситуацию и предлагать меры для уменьшения вреда природе",
+            "Создавать и продвигать свой бизнес-проект в сфере IT, например, компанию по созданию сайтов"
+        ],
+        intellect: 0,
+        initiative: 1
+
+    }, {
+        text: "Выберите:",
+        answers: ["Анализировать информацию о посетителях сайта с целью повышения эффективности его работы",
+            "Разрабатывать удобный и красивый интерфейс для мобильных приложений"
+        ],
+        intellect: 0,
+        art: 1
+
+    }, {
+        text: "Выберите:",
+        answers: ["Помогать в разрешении конфликтов и споров, поиске решений в конфликте и примерении сторон",
+            "Тестировать программы с целью обнаружения ошибок"
+        ],
+        social: 0,
+        conventional: 1
+
+    }, {
+        text: "Выберите:",
+        answers: ["Занимаеться обучением персонала и руководством компаний",
+            "Инициировать, поддерживать и развивать творческие идеи сотрудников, вовлечённых в творческий процесс"
+        ],
+        social: 0,
+        initiative: 1
+
+    }, {
+        text: "Выберите:",
+        answers: ["Отвечать за взаимодействие с клиентами",
+            "Рисовать графику и художественно оформлять игры"
+        ],
+        social: 0,
+        art: 1
+
+    }, {
+        text: "Выберите:",
+        answers: ["Следить за соблюдение норм и правил охраны труда на производстве",
+            "Заниматься продажами и организацией своего \"мини-бизнеса по продажам\" при поддержке крупной компании"
+        ],
+        conventional: 0,
+        initiative: 1
+
+    }, {
+        text: "Выберите:",
+        answers: ["Проверять документы, финансовую и налоговую отчетность и консультировать по финансовым вопросам",
+            "Придумывать и разрабатывать новые модели одежды"
+        ],
+        conventional: 0,
+        art: 1
+
+    }, {
+        text: "Выберите:",
+        answers: ["Управлять работой торгового центра",
+            "Отвечать за звуковое оформление фильма, шоу, компьютерной игры"
+        ],
+        initiative: 0,
+        art: 1
+
+    }, {
+        text: "Выберите:",
+        answers: ["Создавать и обслуживать роботов",
+            "Изучать небесные объекты - звёзды, планеты, кометы"
+        ],
+        real: 0,
+        intellect: 1
+
+    }, {
+        text: "Выберите:",
+        answers: ["Восстанавливать и реконструировать предметы старины - картины, мебель, иконы",
+            "Расказывать про программные продукты и новые технологии обычным потребителями и продвигать их"
+        ],
+        real: 0,
+        social: 1
+
+    }, {
+        text: "Выберите:",
+        answers: ["Ремонтировать музыкальные инструменты",
+            "Анализировать информацию по безопасности лекарственных средств"
+        ],
+        real: 0,
+        conventional: 1
+
+    }, {
+        text: "Выберите:",
+        answers: ["Проектировать и настраивать компьютерные сети и оборудование",
+            "Руководить одним из направлений на госслужбе"
+        ],
+        real: 0,
+        initiative: 1
+
+    }, {
+        text: "Выберите:",
+        answers: ["Собирать и исследовать улики с места преступления",
+            "Рисовать карикатуры на людей, события, факты"
+        ],
+        real: 0,
+        art: 1
+
+    }, {
+        text: "Выберите:",
+        answers: ["Работать на стыке биологии, генетики и химии; создавать новые сорта лекарств, растений",
+            "Отвечать за здоровье людей, лечить людей"
+        ],
+        intellect: 0,
+        social: 1
+
+    }, {
+        text: "Выберите:",
+        answers: ["Создавать протезы, работать на стыке медицины, программирования и инженерии",
+            "Следить за качеством производимых пищевых продуктов"
+        ],
+        intellect: 0,
+        conventional: 1
+
+    }, {
+        text: "Выберите:",
+        answers: ["Изменять свойства живых организмов с помощью манипуляций с генами",
+            "Отвечать за успешное выполнение проекта: в указанные заказчиком сроки, с необходимым качеством"
+        ],
+        intellect: 0,
+        initiative: 1
+
+    }, {
+        text: "Выберите:",
+        answers: ["Создавать новые материалы на молекулярном и атомарном уровне",
+            "Создавать рекламные тексты о товаре или услуге"
+        ],
+        intellect: 0,
+        art: 1
+
+    }, {
+        text: "Выберите:",
+        answers: ["Преподавать",
+            "Писать код для создания сайта"
+        ],
+        social: 0,
+        conventional: 1
+
+    }, {
+        text: "Выберите:",
+        answers: ["Помогать людям решать личностные проблемы и проблемы в отношениях с другими людьми",
+            "Руководить подразделением по информационным технологиям"
+        ],
+        social: 0,
+        initiative: 1
+
+    }, {
+        text: "Выберите:",
+        answers: ["Помогать сиротам, тяжелобольным людям, бездомным",
+            "Придумывать и создавать виртуальные миры"
+        ],
+        social: 0,
+        art: 1
+
+    }, {
+        text: "Выберите:",
+        answers: ["Разрабатывать и оптимизировать бизнес-процессы предприятия",
+            "Продвигать страницу в социальной сети в виде тематического дневника"
+        ],
+        conventional: 0,
+        initiative: 1
+
+    }, {
+        text: "Выберите:",
+        answers: ["Создавать системы защиты информации",
+            "Создавать и исполнять музыкальные произведения для вечеринок, праздников, клубов"
+        ],
+        conventional: 0,
+        art: 1
+
+    }, {
+        text: "Выберите:",
+        answers: ["Консультировать предпринимателей по вопросам ведения бизнеса",
+            "Создавать компьютерные персонажи и модели в трехмерной графике"
+        ],
+        initiative: 0,
+        art: 1
+
+    }, {
+        text: "Выберите:",
+        answers: ["Управлять транспортом (самолеты, пароходы/корабли, поезда)",
+            "Исследовать и изучать историю художественных произведений"
+        ],
+        real: 0,
+        intellect: 1
+
+    }, {
+        text: "Выберите:",
+        answers: ["Создавать одежду, аксессуары, обувь на специальном оборудовании",
+            "Консультировать по вопросам стиля и моды, заниматься созданием имиджа клиента"
+        ],
+        real: 0,
+        social: 1
+
+    }, {
+        text: "Выберите:",
+        answers: ["Ремонтировать и технически обслуживать аппараты или авиационную технику",
+            "Поддерживать работоспособность сайта, сетевую безопасность, размещать контент"
+        ],
+        real: 0,
+        conventional: 1
+
+    }, {
+        text: "Выберите:",
+        answers: ["Производить анализ биологических жидкостей и продуктов жизнедеятельности человека",
+            "Придумывать и развивать свой бизнес-проект в той или иной сфере"
+        ],
+        real: 0,
+        initiative: 1
+
+    }, {
+        text: "Выберите:",
+        answers: ["Ухаживать за растениями в саду, парке",
+            "Придумывать художественное оформление садов, парков"
+        ],
+        real: 0,
+        art: 1
+
+    }, {
+        text: "Выберите:",
+        answers: ["Изучать культуру через текст и язык",
+            "Создавать и поддерживать имидж фирмы через общение с клиентами, партнерами"
+        ],
+        intellect: 0,
+        social: 1
+
+    }, {
+        text: "Выберите:",
+        answers: ["Изучать кристаллы, их структуру и свойства; работать на стыке химии, физики и минералогии",
+            "Управлять движением воздушных судов с земли"
+        ],
+        intellect: 0,
+        social: 1
+
+    }, {
+        text: "Выберите:",
+        answers: ["Изучать политику и анализирует события политической жизни",
+            "Внедрять новые идеи в производство"
+        ],
+        intellect: 0,
+        social: 1
+
+    }, {
+        text: "Выберите:",
+        answers: ["Изучать быт и культуру древних людей по различным артефактам и находкам",
+            "Заниматься оформлением и украшением помещений"
+        ],
+        intellect: 0,
+        art: 1
+
+    }, {
+        text: "Выберите:",
+        answers: ["Консультировать по здоровому образу жизни и профилактике болезней",
+            "Организовывать процесс доставки товаров по оптимальным маршрутам"
+        ],
+        social: 0,
+        conventional: 1
+
+    }, {
+        text: "Выберите:",
+        answers: ["Разрешать конфликты с клиентами",
+            "Руководить группой разработчиков программного обеспечения"
+        ],
+        social: 0,
+        initiative: 1
+
+    }, {
+        text: "Выберите:",
+        answers: ["Отвечать за международные и межкультурным коммуникации в компании",
+            "Создавать анимацию в различных программах"
+        ],
+        social: 0,
+        art: 1
+
+    }, {
+        text: "Выберите:",
+        answers: ["Проводить налоговые проверки, следить за сбором налогов",
+            "Руководить творческой группой, работающей над созданием фильма, спектакля или шоу"
+        ],
+        conventional: 0,
+        initiative: 1
+
+    }];
+
+    var yourAns = new Array;
+
+    var main_sphere= null;
+    var off_sphere = null;
+
+    function Engine(question, answer) {
+        yourAns[question] = answer;
+    };
+
+    function Score() {
+
+    var intellect_score = 0;
+    var real_score = 0;
+    var social_score = 0;
+    var conventional_score = 0;
+    var initiative_score = 0;
+    var art_score = 0;
+
+        for (var i = 0; i < yourAns.length; ++i) {
+            var num = i + 1;
+            if (yourAns[i] == questions[i].intellect) {
+                ++intellect_score
+            } else if (yourAns[i] == questions[i].real) {
+                ++real_score
+            } else if (yourAns[i] == questions[i].social) {
+                ++social_score
+            } else if (yourAns[i] == questions[i].conventional) {
+                ++conventional_score
+            } else if (yourAns[i] == questions[i].initiative) {
+                ++initiative_score
+            } else if (yourAns[i] == questions[i].art) {
+                ++art_score
+            }};
+        var dict = {
+            "1": intellect_score,
+            "2": real_score,
+            "3": social_score,
+            "4": conventional_score,
+            "5": initiative_score,
+            "6": art_score
+        };
+
+        var items = Object.keys(dict).map(function(key) {
+            return [key, dict[key]];
+        });
+        items.sort(function(first, second) {
+            return second[1] - first[1];
+        });
+        main_sphere = items[0][0];
+        off_sphere = items[1][0];
+
+        yourAns = [];
+
+    };
+
+    function clearForm(name) {
+        var f = document.forms[name];
+        for (var i = 0; i < f.elements.length; ++i) {
+            if (f.elements[i].checked)
+                f.elements[i].checked = false;
+        }
+    }
+</script>
+
+<form id="quizForm" name="quiz" method="POST" autocomplete="off" style="margin:100px;margin-top: 0px;">
+    <ol>
+        <script>
+            for (var q = 0; q < questions.length; ++q) {
+                var question = questions[q];
+                var idx = 1 + q;
+
+                    document.writeln('<li><span class="quest"><legend> ' + question.text + ' </legend></span>');
+                for (var i in question.answers) {
+                    document.writeln('<label><input type=radio name="q' + idx + '" value="' + i +
+                        '" onClick="Engine(' + q + ', this.value)"> ' + question.answers[i] + '</label><br><br>');
+                }
+                document.writeln('</li>');
+            }
+        </script>
+
+
+    </ol>
+
+    <br>
+    <input type="submit" name="contact-submit"  onClick="Score()" class="btn btn-success btn-lg" />
+</form>
+
+
+
+<script>
+$(document).ready(function () {
+  $("#quizForm").submit(function (event) {
+    $.ajax({
+      type: "POST",
+       async: false,
+      url: "/user/user-exam",
+      data: {
+        'main_sphere': main_sphere,
+        'off_sphere': off_sphere,
+        'csrfmiddlewaretoken': $('input[name=csrfmiddlewaretoken]').val()
+      },
+      success: function () {
+      }
+    });
+  });
+
+});
+
+ </script>
+
+<br><br><br>
+
+
+
+
+<br><br><br>
+{% endblock content %}

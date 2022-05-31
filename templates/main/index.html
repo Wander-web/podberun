@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+
+<style>
+  .jumbotron{
+    margin-bottom: 0px;
+  }
+</style>
+<body>
+  {% include "main/navbar.html" %}
+<br>
+<section id="section-jumbotron" class="jumbotron jumbotron-fluid d-flex justify-content-center align-items-center">
+  <div class="container text-center">
+    <h1 class="display-1 text-info">Подберун</h1>
+    <p class="display-4 d-none d-sm-block">Огромное количество программ обучения.</p>
+    <p class="lead">После тестирования Вам будет проще выбирать!</p>
+
+    
+
+    <p class="lead">Зарегистрироваться если еще не выбрал чем заняться.</p>
+    <p><strong> Начни прямо сейчас:</strong></p>
+    <a href="/user/usersignup" class="btn btn-lg btn-info" style="padding-right: 35px;"><i class="fa fa-user-plus" aria-hidden="true"></i> Регистрация</a>
+    
+    <br><br><br>
+  </div>  
+</section>
+  {% include "main/footer.html" %}
+
+
+</body>
+
+</html>

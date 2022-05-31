@@ -1,0 +1,48 @@
+{% extends 'main/adminbase.html' %}
+{% load widget_tweaks %}
+{% block content %}
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+       <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  a:link {
+        text-decoration: none;
+      }
+    
+  </style>
+</head>
+<h2 style="text-align:center; color:blue;">Добавить программу</h2>
+<form method="POST" autocomplete="off" style="margin:100px;margin-top: 0px;">
+    {%csrf_token%}
+
+    <div class="form-group">
+        <label for="course_name">Название учебной программы</label>
+        {% render_field courseForm.title class="form-control" placeholder="Прикладная информатика" %}
+        <label for="code">Код</label>
+        {% render_field courseForm.code class="form-control" placeholder="10.10.10.10" %}
+        <label for="code">Сылка</label>
+        {% render_field courseForm.link class="form-control" placeholder="https://" %}
+        <label for="university">Вуз</label>
+        {% render_field courseForm.university class="form-control" %}
+        <label for="code">Тег №1</label>
+        {% render_field courseForm.tag_1 class="form-control" %}
+        <label for="code">Тег №2</label>
+        {% render_field courseForm.tag_2 class="form-control" %}
+        <label for="code">Тег №3</label>
+        {% render_field courseForm.tag_3 class="form-control" %}
+        <label for="description">Описание</label>
+        {% render_field courseForm.description class="form-control" rows="10" %}
+
+    </div>
+    
+
+    <button type="submit" class="btn btn-primary">Добавить</button>
+  </form>
+<br><br><br>
+{% endblock content %}
